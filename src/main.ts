@@ -16,6 +16,13 @@ async function bootstrap() {
       },
     }),
   );
+
+  app.enableCors({
+    origin: 'http://localhost:3000', // Your Next.js app URL
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // If you need to pass cookies
+  });
+
   await app.listen(3001);
 }
 bootstrap();
